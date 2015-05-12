@@ -17,6 +17,10 @@ fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 
 bindkey -e
 
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
+
 #zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
