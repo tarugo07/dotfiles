@@ -3,6 +3,9 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=true
 export EDITOR='~/bin/subl -w'
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$(go env GOROOT)/bin:$GOPATH/bin
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
