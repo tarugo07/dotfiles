@@ -107,3 +107,18 @@ alias -g G='| grep'
 alias -g N='> /dev/null'
 
 alias zmv='noglob zmv -W'
+
+function peco-execute-history() {
+  local item
+  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="$item"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N peco-execute-history
+bindkey '^x^r' peco-execute-history
