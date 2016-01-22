@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DOTFILES_PATH=$(cd $(dirname $0);pwd)
-DOTFILES_FILES=(.zshrc .gitconfig .gitignore .tmux.conf)
+THIS=$(cd $(dirname $0);pwd)
+DOTFILES=(.zshrc .gitconfig .gitignore .tmux.conf)
 
-for file in ${DOTFILES_FILES[@]}
+for file in ${DOTFILES[@]}
 do
-    ln -s $DOTFILES_PATH/$file $HOME/$file
+    ln -s $THIS/$file $HOME/$file
 done
