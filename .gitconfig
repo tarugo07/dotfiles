@@ -17,3 +17,5 @@
 	ci = commit
 	di = diff
 	gr = grep
+	dw = diff --color-words
+	br = branch
