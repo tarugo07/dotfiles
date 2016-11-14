@@ -118,7 +118,7 @@ function peco-execute-history() {
 
   BUFFER="$item"
   CURSOR=$#BUFFER
-  zle accept-line
+  # zle accept-line
 }
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
