@@ -122,3 +122,8 @@ function peco-execute-history() {
 }
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
+
+function sshconfig() {
+  mv $HOME/.ssh/config{,.bak}
+  cat $HOME/.ssh/conf.d/config $HOME/.ssh/conf.d/*.conf > $HOME/.ssh/config
+}
