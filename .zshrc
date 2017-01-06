@@ -123,6 +123,9 @@ function peco-execute-history() {
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
 
+export NVM_DIR=$HOME/.nvm
+[ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh  # This loads nvm
+
 function sshconfig() {
   mv $HOME/.ssh/config{,.bak}
   cat $HOME/.ssh/conf.d/config $HOME/.ssh/conf.d/*.conf > $HOME/.ssh/config
