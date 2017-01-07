@@ -130,3 +130,7 @@ function sshconfig() {
   mv $HOME/.ssh/config{,.bak}
   cat $HOME/.ssh/conf.d/config $HOME/.ssh/conf.d/*.conf > $HOME/.ssh/config
 }
+
+function col() {
+  awk -v col=$1 '{print $col}'
+}
