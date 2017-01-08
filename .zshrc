@@ -134,3 +134,8 @@ function sshconfig() {
 function col() {
   awk -v col=$1 '{print $col}'
 }
+
+function skip() {
+    n=$(($1 + 1))
+    cut -d' ' -f$n-
+}
