@@ -23,6 +23,8 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
 
+[[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
+
 #zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
