@@ -29,6 +29,11 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+if which pyenv-virtualenv-init > /dev/null; then
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+  eval "$(pyenv virtualenv-init -)";
+fi
+
 [[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
 
 #zstyle ':completion:*' menu yes select=2
