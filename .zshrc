@@ -34,6 +34,11 @@ if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)";
 fi
 
+if [ -d $HOME/.phpenv ]; then
+ export PATH=$HOME/.phpenv/bin:$PATH
+ eval "$(phpenv init -)"
+fi
+
 [[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
 
 #zstyle ':completion:*' menu yes select=2
