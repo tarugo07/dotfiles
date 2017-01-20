@@ -41,6 +41,12 @@ fi
 
 [[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
 
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+  source $HOME/.zsh/antigen/antigen.zsh
+  # antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen apply
+fi
+
 #zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
