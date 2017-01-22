@@ -34,12 +34,14 @@ if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)";
 fi
 
-if [ -d $HOME/.phpenv ]; then
+if [[ -d $HOME/.phpenv ]]; then
  export PATH=$HOME/.phpenv/bin:$PATH
  eval "$(phpenv init -)"
 fi
 
-[[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
+if [[ -s "$(brew --prefix dvm)/dvm.sh" ]] then
+  source "$(brew --prefix dvm)/dvm.sh"
+fi
 
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
@@ -150,7 +152,9 @@ zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
 
 export NVM_DIR=$HOME/.nvm
-[ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh  # This loads nvm
+if [[ -s $NVM_DIR/nvm.sh ]]; then
+  source $NVM_DIR/nvm.sh
+fi
 
 function sshconfig() {
   mv $HOME/.ssh/config{,.bak}
