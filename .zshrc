@@ -100,6 +100,12 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; 
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+if [ -f /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+  source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+  bindkey -M emacs '^P' history-substring-search-up
+  bindkey -M emacs '^N' history-substring-search-down
+fi
+
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
