@@ -45,7 +45,7 @@ fi
 
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
-  # antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle zsh-users/zsh-syntax-highlighting
   antigen apply
 fi
 
@@ -95,10 +95,6 @@ function _update_vcs_info_msg() {
   fi
 }
 add-zsh-hook precmd _update_vcs_info_msg
-
-if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
 
 if [ -f /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
   source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
