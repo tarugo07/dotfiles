@@ -1,5 +1,4 @@
 export LANG=ja_JP.UTF-8
-#export KCODE=u
 export CLICOLOR=true
 export EDITOR='~/bin/subl -w'
 
@@ -45,6 +44,7 @@ fi
 
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
+  antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen apply
 fi
@@ -96,11 +96,9 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
-if [ -f /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
-  source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
-  bindkey -M emacs '^P' history-substring-search-up
-  bindkey -M emacs '^N' history-substring-search-down
-fi
+# bindkeyの定義
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 
 setopt AUTO_CD
 setopt AUTO_PUSHD
