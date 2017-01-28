@@ -19,7 +19,7 @@ fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 bindkey -e
 
 function source_if_exist_file() {
-  if [[ -f "$1" ]]: then
+  if [[ -f "$1" ]]; then
     source "$1"
   fi
 }
