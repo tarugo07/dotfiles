@@ -24,6 +24,10 @@ function source_if_exist_file() {
   fi
 }
 
+function has() {
+  type "${1:?too few arguments}" &>/dev/null
+}
+
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
