@@ -161,6 +161,21 @@ function peco-execute-history() {
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
 
+function peco-cdr() {
+  local item
+  item=$(cdr -l | sed 's/^[^ ]\{1,\} \{1,\}//' | peco)
+
+  if [[ -z "$item" ]]; then
+    return 1
+  fi
+
+  BUFFER="cd -- $item"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N peco-cdr
+bindkey '^xb' peco-cdr
+
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
   source $NVM_DIR/nvm.sh
