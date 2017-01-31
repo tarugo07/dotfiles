@@ -52,13 +52,6 @@ if [[ -s "$(brew --prefix dvm)/dvm.sh" ]] then
   source "$(brew --prefix dvm)/dvm.sh"
 fi
 
-if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-  source $HOME/.zsh/antigen/antigen.zsh
-  antigen bundle zsh-users/zsh-history-substring-search
-  antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen apply
-fi
-
 #zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -105,6 +98,13 @@ function _update_vcs_info_msg() {
   fi
 }
 add-zsh-hook precmd _update_vcs_info_msg
+
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+  source $HOME/.zsh/antigen/antigen.zsh
+  antigen bundle zsh-users/zsh-history-substring-search
+  antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen apply
+fi
 
 # bindkeyの定義
 bindkey -M emacs '^P' history-substring-search-up
