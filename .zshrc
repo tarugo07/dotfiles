@@ -25,7 +25,7 @@ function source_if_exist_file() {
 }
 
 function has() {
-  type "${1:?too few arguments}" &>/dev/null
+  type "$1" &>/dev/null
 }
 
 if which rbenv > /dev/null; then
@@ -106,9 +106,8 @@ if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   antigen apply
 fi
 
-# bindkeyの定義
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+has history-substring-search-up && bindkey -M emacs '^P' history-substring-search-up
+has history-substring-search-down && bindkey -M emacs '^N' history-substring-search-down
 
 setopt AUTO_CD
 setopt AUTO_PUSHD
