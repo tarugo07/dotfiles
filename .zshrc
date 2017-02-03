@@ -48,7 +48,7 @@ if [[ -d $HOME/.phpenv ]]; then
  eval "$(phpenv init -)"
 fi
 
-if [[ -s "$(brew --prefix dvm)/dvm.sh" ]] then
+if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
   source "$(brew --prefix dvm)/dvm.sh"
 fi
 
