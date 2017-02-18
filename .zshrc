@@ -146,7 +146,7 @@ alias -g N='> /dev/null'
 
 alias zmv='noglob zmv -W'
 
-function peco-execute-history() {
+function peco-put-history() {
   local item
   item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
 
@@ -156,10 +156,9 @@ function peco-execute-history() {
 
   BUFFER="$item"
   CURSOR=$#BUFFER
-  # zle accept-line
 }
-zle -N peco-execute-history
-bindkey '^x^r' peco-execute-history
+zle -N peco-put-history
+bindkey '^x^r' peco-put-history
 
 function peco-cdr() {
   local item
