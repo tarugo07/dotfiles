@@ -146,19 +146,20 @@ alias -g N='> /dev/null'
 
 alias zmv='noglob zmv -W'
 
-function peco-put-history() {
-  local item
-  item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
-
-  if [[ -z "$item" ]]; then
-    return 1
-  fi
-
-  BUFFER="$item"
-  CURSOR=$#BUFFER
-}
-zle -N peco-put-history
-bindkey '^x^r' peco-put-history
+# function peco-put-history() {
+#   local item
+#   item=$(builtin history -n -r 1 | peco --query="$LBUFFER")
+#
+#   if [[ -z "$item" ]]; then
+#     return 1
+#   fi
+#
+#   BUFFER="$item"
+#   CURSOR=$#BUFFER
+# }
+# zle -N peco-put-history
+# bindkey '^x^r' peco-put-history
+bindkey '^x^r' anyframe-widget-put-history
 
 function peco-cdr() {
   local item
