@@ -147,21 +147,7 @@ alias -g N='> /dev/null'
 alias zmv='noglob zmv -W'
 
 bindkey '^x^r' anyframe-widget-put-history
-
-function peco-cdr() {
-  local item
-  item=$(cdr -l | sed 's/^[^ ]\{1,\} \{1,\}//' | peco)
-
-  if [[ -z "$item" ]]; then
-    return 1
-  fi
-
-  BUFFER="cd -- $item"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
-zle -N peco-cdr
-bindkey '^xb' peco-cdr
+bindkey '^xb' anyframe-widget-cdr
 
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
