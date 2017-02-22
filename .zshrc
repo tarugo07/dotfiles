@@ -148,6 +148,7 @@ alias zmv='noglob zmv -W'
 
 bindkey '^x^r' anyframe-widget-put-history
 bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^f' anyframe-widget-insert-filename
 
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
