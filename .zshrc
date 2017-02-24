@@ -150,6 +150,7 @@ bindkey '^x^r' anyframe-widget-put-history
 bindkey '^x^b' anyframe-widget-cdr
 bindkey '^x^f' anyframe-widget-insert-filename
 bindkey '^x^k' anyframe-widget-kill
+bindkey '^xb' anyframe-widget-checkout-git-branch
 
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
