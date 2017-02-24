@@ -146,11 +146,12 @@ alias -g N='> /dev/null'
 
 alias zmv='noglob zmv -W'
 
-bindkey '^x^r' anyframe-widget-put-history
+bindkey '^xb' anyframe-widget-checkout-git-branch
 bindkey '^x^b' anyframe-widget-cdr
 bindkey '^x^f' anyframe-widget-insert-filename
+bindkey '^x^i' anyframe-widget-insert-git-branch
 bindkey '^x^k' anyframe-widget-kill
-bindkey '^xb' anyframe-widget-checkout-git-branch
+bindkey '^x^r' anyframe-widget-put-history
 
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
