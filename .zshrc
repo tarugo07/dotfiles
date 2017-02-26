@@ -152,6 +152,7 @@ bindkey '^x^f' anyframe-widget-insert-filename
 bindkey '^x^i' anyframe-widget-insert-git-branch
 bindkey '^x^k' anyframe-widget-kill
 bindkey '^x^r' anyframe-widget-put-history
+bindkey '^x^t' anyframe-widget-tmux-attach
 
 export NVM_DIR=$HOME/.nvm
 if [[ -s $NVM_DIR/nvm.sh ]]; then
