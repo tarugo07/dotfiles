@@ -149,6 +149,7 @@ alias zmv='noglob zmv -W'
 bindkey '^xb' anyframe-widget-checkout-git-branch
 bindkey '^x^b' anyframe-widget-cdr
 bindkey '^x^f' anyframe-widget-insert-filename
+bindkey '^x^g' anyframe-widget-cd-ghq-repository
 bindkey '^x^i' anyframe-widget-insert-git-branch
 bindkey '^x^k' anyframe-widget-kill
 bindkey '^x^r' anyframe-widget-put-history
