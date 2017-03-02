@@ -1,13 +1,13 @@
 export LANG=ja_JP.UTF-8
 export CLICOLOR=true
-export EDITOR='~/bin/subl -w'
+export EDITOR="$HOME/bin/subl -w"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$(go env GOROOT)/bin:$GOPATH/bin
 
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M"
 
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
@@ -55,7 +55,7 @@ fi
 #zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
