@@ -107,13 +107,7 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
-if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-  source $HOME/.zsh/antigen/antigen.zsh
-  antigen-bundle zsh-users/zsh-history-substring-search
-  antigen-bundle zsh-users/zsh-syntax-highlighting
-  antigen-bundle mollifier/anyframe
-  antigen-apply
-fi
+source_if_exist_file $HOME/.zshrc.antigen
 
 has history-substring-search-up && bindkey -M emacs '^P' history-substring-search-up
 has history-substring-search-down && bindkey -M emacs '^N' history-substring-search-down
