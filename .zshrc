@@ -116,29 +116,7 @@ setopt NO_FLOW_CONTROL
 setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
-alias ls='ls -F'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lltr='ls -ltr'
-alias llatr='ls -latr'
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-alias mkdir='mkdir -p'
-
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g N='> /dev/null'
-
-alias zmv='noglob zmv -W'
+source_if_exist_file $HOME/.zshrc.alias
 
 bindkey '^xb' anyframe-widget-checkout-git-branch
 bindkey '^x^b' anyframe-widget-cdr
