@@ -12,7 +12,6 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 PROMPT="[%n]%# "
-# RPROMPT="[%~]"
 
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 
@@ -52,7 +51,6 @@ if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
   source "$(brew --prefix dvm)/dvm.sh"
 fi
 
-#zstyle ':completion:*' menu yes select=2
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle :compinstall filename "$HOME/.zshrc"
