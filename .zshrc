@@ -113,6 +113,16 @@ setopt IGNORE_EOF
 setopt NO_FLOW_CONTROL
 setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_NO_STORE
+setopt HIST_VERIFY
 
 source_if_exist_file $HOME/.zshrc.alias
 
