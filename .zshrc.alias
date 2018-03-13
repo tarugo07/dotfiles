@@ -21,3 +21,5 @@ alias -g G='| grep'
 alias -g N='> /dev/null'
 
 alias zmv='noglob zmv -W'
+
+alias history='history -iD'
