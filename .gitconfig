@@ -20,4 +20,4 @@
 	dw = diff --color-words
 	br = branch
 [ghq]
-	root = ~/go/src
+	root = ~/src
