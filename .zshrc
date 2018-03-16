@@ -155,6 +155,24 @@ function skip() {
 }
 
 function propen() {
-    local name=$(git symbolic-ref --short HEAD | xargs perl -MURI::Escape -e 'print uri_escape($ARGV[0]);')
-    git config --get remote.origin.url | sed -e "s/^.*[:\/]\(.*\/.*\).git$/https:\/\/github.com\/\1\//" | sed -e "s/$/pull\/${name}/" | xargs open
+  local name=$(git symbolic-ref --short HEAD | xargs perl -MURI::Escape -e 'print uri_escape($ARGV[0]);')
+  git config --get remote.origin.url | sed -e "s/^.*[:\/]\(.*\/.*\).git$/https:\/\/github.com\/\1\//" | sed -e "s/$/pull\/${name}/" | xargs open
 }
+
+function peco-src() {
+  local selected_dir=$(ghq list | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd $(ghq root)/${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
+function peco-git-browse() {
+  local selected_dir=$(ghq list | peco --query "$LBUFFER" | cut -d "/" -f 2,3)
+  hub browse ${selected_dir}
+}
+zle -N peco-git-browse
+bindkey '^[' peco-git-browse
