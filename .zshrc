@@ -2,8 +2,8 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=true
 export EDITOR="$HOME/bin/subl -w"
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$(go env GOROOT)/bin:$GOPATH/bin
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
 
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M"
 
