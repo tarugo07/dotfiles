@@ -172,7 +172,9 @@ bindkey '^]' peco-src
 
 function peco-git-browse() {
   local selected_dir=$(ghq list | peco --query "$LBUFFER" | cut -d "/" -f 2,3)
-  hub browse ${selected_dir}
+  if [ -n "$selected_dir" ]; then
+    hub browse ${selected_dir}
+  fi
 }
 zle -N peco-git-browse
 bindkey '^[' peco-git-browse
