@@ -10,6 +10,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias mkdir='mkdir -p'
+alias diff='colordiff -u'
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -23,3 +24,5 @@ alias -g N='> /dev/null'
 alias zmv='noglob zmv -W'
 
 alias history='history -iD'
+
+alias ds='ls -F | grep / | xargs du -sh'
