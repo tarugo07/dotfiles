@@ -7,6 +7,8 @@ export PATH=$PATH:$GOPATH/bin
 
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M"
 
+export LESS="-iMRS"
+
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
