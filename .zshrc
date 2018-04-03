@@ -1,6 +1,6 @@
 export LANG=ja_JP.UTF-8
 export CLICOLOR=true
-export EDITOR="$HOME/bin/subl -w"
+export EDITOR="/usr/local/bin/atom"
 
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
@@ -51,6 +51,10 @@ fi
 
 if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
   source "$(brew --prefix dvm)/dvm.sh"
+fi
+
+if which direnv > /dev/null; then
+  eval "$(direnv hook zsh)"
 fi
 
 zstyle ':completion:*' menu select=2
