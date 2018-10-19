@@ -189,3 +189,5 @@ function peco-git-browse() {
 }
 zle -N peco-git-browse
 bindkey '^[' peco-git-browse
+
+source <(kubectl completion zsh)
