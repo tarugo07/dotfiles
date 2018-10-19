@@ -45,8 +45,8 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi
 
 if [[ -d $HOME/.phpenv ]]; then
- export PATH=$HOME/.phpenv/bin:$PATH
- eval "$(phpenv init -)"
+  export PATH=$HOME/.phpenv/bin:$PATH
+  eval "$(phpenv init -)"
 fi
 
 if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
@@ -55,6 +55,11 @@ fi
 
 if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
+fi
+
+if which jenv > /dev/null; then
+  export PATH=$HOME/.jenv/bin:$PATH
+  eval "$(jenv init -)"
 fi
 
 zstyle ':completion:*' menu select=2
