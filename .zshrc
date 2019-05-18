@@ -146,10 +146,9 @@ bindkey '^x^k' anyframe-widget-kill
 bindkey '^x^r' anyframe-widget-put-history
 bindkey '^x^t' anyframe-widget-tmux-attach
 
-export NVM_DIR=$HOME/.nvm
-if [[ -s $NVM_DIR/nvm.sh ]]; then
-  source $NVM_DIR/nvm.sh
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s $(brew --prefix nvm)/nvm.sh ] && source $(brew --prefix nvm)/nvm.sh
+[ -s $(brew --prefix nvm)/etc/bash_completion.d/nvm ] && source $(brew --prefix nvm)/etc/bash_completion.d/nvm
 
 function sshconfig() {
   mv $HOME/.ssh/config{,.bak}
