@@ -16,6 +16,7 @@ SAVEHIST=1000000
 PROMPT="[%n]%# "
 
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
+fpath=(~/.zsh/completions(N-/) $fpath)
 
 bindkey -e
 
