@@ -7,3 +7,5 @@ for file in ${DOTFILES[@]}
 do
     ln -s $THIS/$file $HOME/$file
 done
+
+mkdir -p ~/.zsh/completions
