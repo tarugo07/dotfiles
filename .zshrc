@@ -147,8 +147,7 @@ bindkey '^x^r' anyframe-widget-put-history
 bindkey '^x^t' anyframe-widget-tmux-attach
 
 export NVM_DIR="$HOME/.nvm"
-[ -s $(brew --prefix nvm)/nvm.sh ] && source $(brew --prefix nvm)/nvm.sh
-[ -s $(brew --prefix nvm)/etc/bash_completion.d/nvm ] && source $(brew --prefix nvm)/etc/bash_completion.d/nvm
+source_if_exist_file $(brew --prefix nvm)/nvm.sh
 
 function sshconfig() {
   mv $HOME/.ssh/config{,.bak}
@@ -189,4 +188,4 @@ function peco-git-browse() {
 zle -N peco-git-browse
 bindkey '^[' peco-git-browse
 
-source <(kubectl completion zsh)
+has "kubectl" && source <(kubectl completion zsh)
