@@ -1,6 +1,6 @@
 export LANG=ja_JP.UTF-8
 export CLICOLOR=true
-export EDITOR="/usr/local/bin/atom"
+export EDITOR="/usr/local/bin/code --wait"
 
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
@@ -37,31 +37,32 @@ fi
 if which pyenv > /dev/null; then
   export PYENV_ROOT=$HOME/.pyenv
   export PATH=$PYENV_ROOT/bin:$PATH
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 
-if which pyenv-virtualenv-init > /dev/null; then
-  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-  eval "$(pyenv virtualenv-init -)";
-fi
+# if which pyenv-virtualenv-init > /dev/null; then
+#   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#   eval "$(pyenv virtualenv-init -)";
+# fi
 
-if [[ -d $HOME/.phpenv ]]; then
-  export PATH=$HOME/.phpenv/bin:$PATH
-  eval "$(phpenv init -)"
-fi
+# if [[ -d $HOME/.phpenv ]]; then
+#   export PATH=$HOME/.phpenv/bin:$PATH
+#   eval "$(phpenv init -)"
+# fi
 
-if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
-  source "$(brew --prefix dvm)/dvm.sh"
-fi
+# if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
+#   source "$(brew --prefix dvm)/dvm.sh"
+# fi
 
 if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-if which jenv > /dev/null; then
-  export PATH=$HOME/.jenv/bin:$PATH
-  eval "$(jenv init -)"
-fi
+# if which jenv > /dev/null; then
+#   export PATH=$HOME/.jenv/bin:$PATH
+#   eval "$(jenv init -)"
+# fi
 
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
