@@ -15,6 +15,7 @@ SAVEHIST=1000000
 
 PROMPT="[%n]%# "
 
+fpath=(/opt/homebrew/share/zsh-completions(N-/) $fpath)
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 fpath=(~/.zsh/completions(N-/) $fpath)
 
