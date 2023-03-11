@@ -137,6 +137,10 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_NO_STORE
 setopt HIST_VERIFY
+# setopt LIST_PACKED
+
+autoload colors
+zstyle ':completion:*' list-colors ''
 
 source_if_exist_file $HOME/.zshrc.alias
 
