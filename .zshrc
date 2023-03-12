@@ -72,6 +72,10 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
+autoload -Uz colors
+colors
+zstyle ':completion:*' list-colors ''
+
 autoload -Uz add-zsh-hook
 
 autoload -Uz select-word-style
@@ -138,9 +142,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_NO_STORE
 setopt HIST_VERIFY
 # setopt LIST_PACKED
-
-autoload colors
-zstyle ':completion:*' list-colors ''
 
 source_if_exist_file $HOME/.zshrc.alias
 
