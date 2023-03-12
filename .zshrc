@@ -5,8 +5,6 @@ export EDITOR="/usr/local/bin/code --wait"
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
-export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M"
-
 export LESS="-iMRS"
 
 HISTFILE=$HOME/.zsh_history
