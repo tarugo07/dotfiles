@@ -50,10 +50,6 @@ fi
 #   eval "$(phpenv init -)"
 # fi
 
-# if [[ -s "$(brew --prefix dvm)/dvm.sh" ]]; then
-#   source "$(brew --prefix dvm)/dvm.sh"
-# fi
-
 if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
