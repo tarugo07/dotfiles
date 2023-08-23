@@ -40,6 +40,13 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+if which goenv > /dev/null; then
+  export GOENV_ROOT=$HOME/.goenv
+  export PATH=$GOENV_ROOT/bin:$PATH
+  eval "$(goenv init -)"
+  alias go=~/.goenv/shims/go
+fi
+
 # if which pyenv-virtualenv-init > /dev/null; then
 #   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 #   eval "$(pyenv virtualenv-init -)";
