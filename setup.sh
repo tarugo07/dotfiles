@@ -8,4 +8,5 @@ do
     ln -s $THIS/$file $HOME/$file
 done
 
-mkdir -p ~/.zsh/completions
+mkdir -p $HOME/.zsh/completions
+mkdir -p $HOME/bin
