@@ -22,3 +22,5 @@
 	br = branch
 [ghq]
 	root = ~/src
+[commit]
+	template = ~/.stCommitMsg
