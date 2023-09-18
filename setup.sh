@@ -1,7 +1,7 @@
 #!/bin/bash
 
 THIS=$(cd $(dirname $0);pwd)
-DOTFILES=(.zprofile .zshenv .zshrc .zshrc.antigen .zshrc.alias .gitconfig .gitignore .tmux.conf)
+DOTFILES=(.zprofile .zshenv .zshrc .zshrc.antigen .zshrc.alias .gitconfig .gitignore .tmux.conf .latexmkrc)
 
 for file in ${DOTFILES[@]}
 do
